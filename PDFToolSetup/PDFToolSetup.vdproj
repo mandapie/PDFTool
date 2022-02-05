@@ -51,6 +51,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_A8DFA7F10EB14E57BF572C2428CB13EE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_D61370BFC0EC67907D191FFC3467525E"
         "OwnerKey" = "8:_F6F35B2A89694F03894E1A0DF2979609"
         "MsmSig" = "8:_UNDEFINED"
@@ -140,6 +146,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -175,7 +189,7 @@
             "SourcePath" = "8:..\\PDFTool\\bin\\Release\\x86\\pdfium.dll"
             "TargetName" = "8:pdfium.dll"
             "Tag" = "8:"
-            "Folder" = "8:_4ECAF354BC924AF0AEFD0709FF596412"
+            "Folder" = "8:_649EE4E55B2B43AAB68821F923CC7E14"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -257,7 +271,7 @@
             "SourcePath" = "8:..\\PDFTool\\bin\\Release\\x64\\pdfium.dll"
             "TargetName" = "8:pdfium.dll"
             "Tag" = "8:"
-            "Folder" = "8:_675402EAE66E4199B1FBB75F7E4625EF"
+            "Folder" = "8:_386E0F6F31644E2CB8BE8E630E4797E4"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -303,6 +317,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A8DFA7F10EB14E57BF572C2428CB13EE"
+            {
+            "SourcePath" = "8:..\\..\\..\\favicon.ico"
+            "TargetName" = "8:favicon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_9103658B07944A0B8850261A04E0CFDF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D61370BFC0EC67907D191FFC3467525E"
             {
             "AssemblyRegister" = "3:1"
@@ -342,7 +376,7 @@
         {
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_9103658B07944A0B8850261A04E0CFDF"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFilesFolder]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -350,24 +384,24 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_4ECAF354BC924AF0AEFD0709FF596412"
-                    {
-                    "Name" = "8:x86"
-                    "AlwaysCreate" = "11:FALSE"
-                    "Condition" = "8:"
-                    "Transitive" = "11:FALSE"
-                    "Property" = "8:_0AEC83EF22AD467B994F495A3E4C10D8"
-                        "Folders"
-                        {
-                        }
-                    }
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_675402EAE66E4199B1FBB75F7E4625EF"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_386E0F6F31644E2CB8BE8E630E4797E4"
                     {
                     "Name" = "8:x64"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
                     "Property" = "8:_04C20C3AEFF04BEA865293A0826CAC26"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_649EE4E55B2B43AAB68821F923CC7E14"
+                    {
+                    "Name" = "8:x86"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_0AEC83EF22AD467B994F495A3E4C10D8"
                         "Folders"
                         {
                         }
@@ -413,7 +447,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:PDFToolSetup"
         "ProductCode" = "8:{A88C8758-DA62-4302-BC9E-7B28B0B3FF4B}"
-        "PackageCode" = "8:{151AAA11-7A18-45A1-BB12-F4CD9010B62C}"
+        "PackageCode" = "8:{7866F0FB-1A16-4F56-8F37-8E7302A91133}"
         "UpgradeCode" = "8:{54521DAC-B93A-4D0B-B616-85C2DAB55EA1}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -533,6 +567,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_AB8C864F1929497F80F5E3B09345C0E9"
+            {
+            "Name" = "8:PDFTool"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_F6F35B2A89694F03894E1A0DF2979609"
+            "Folder" = "8:_EAC46875FF84485BA19B8647E2B5301D"
+            "WorkingFolder" = "8:_9103658B07944A0B8850261A04E0CFDF"
+            "Icon" = "8:_A8DFA7F10EB14E57BF572C2428CB13EE"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
