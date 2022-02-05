@@ -1,7 +1,6 @@
 ﻿using Microsoft.Win32;
 using PDFTool.BLLs;
 using System;
-using System.IO;
 using System.Windows;
 
 namespace PDFTool
@@ -42,7 +41,21 @@ namespace PDFTool
         {
             try
             {
+                // validation
+                string filefullname = filenameTextbox.Text;
+                string[] extentionTypes = new string[] { ".pdf" };
+                if (!Utils.ValidateFile(filefullname, extentionTypes))
+                {
+                    MessageBox.Show(Utils.Messages.IncorrectFile + string.Format(Utils.Messages.AcceptedFileList, string.Join(", ", extentionTypes)), "Warning");
+                    return;
+                }
 
+                // shrink
+                CompressPDF bll = new CompressPDF();
+                if (bll.ShrinkPDF(filefullname))
+                {
+                    MessageBox.Show(Utils.Messages.SuccessConvert, "Success");
+                }
             }
             catch (Exception ex)
             {
@@ -65,8 +78,7 @@ namespace PDFTool
 
                 // convert
                 ConvertToPDF bll = new ConvertToPDF();
-                string filefullname = Path.ChangeExtension(imagefullname, ".pdf");
-                if (bll.GeneratePDF(imagefullname, filefullname))
+                if (bll.GeneratePDF(imagefullname))
                 {
                     MessageBox.Show(Utils.Messages.SuccessConvert, "Success");
                 }
@@ -113,8 +125,7 @@ namespace PDFTool
 
                 // convert
                 ConvertToImage bll = new ConvertToImage();
-                string imageSavePath = Path.GetDirectoryName(filefullname);
-                if (bll.GenerateImage(filefullname, imageSavePath, fileType, dpi))
+                if (bll.GenerateImage(filefullname, fileType, dpi))
                 {
                     MessageBox.Show(Utils.Messages.SuccessConvert, "Success");
                 }

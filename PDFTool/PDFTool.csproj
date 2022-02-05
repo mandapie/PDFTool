@@ -77,6 +77,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BLLs\CompressPDF.cs" />
     <Compile Include="BLLs\ConvertToImage.cs" />
     <Compile Include="BLLs\ConvertToPDF.cs" />
     <Compile Include="BLLs\Utils.cs" />
