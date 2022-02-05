@@ -15,6 +15,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_261695CB9EA24245B2D1D81DA506BF7B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_279AAF6B7809FA42669E7AE52F1258F3"
         "OwnerKey" = "8:_5355FA0D2C05E733B156A460959ABD0D"
         "MsmSig" = "8:_UNDEFINED"
@@ -33,6 +39,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_364549D407CF442494D99E87FE44A3CF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5355FA0D2C05E733B156A460959ABD0D"
         "OwnerKey" = "8:_F6F35B2A89694F03894E1A0DF2979609"
         "MsmSig" = "8:_UNDEFINED"
@@ -47,12 +59,6 @@
         {
         "MsmKey" = "8:_F6F35B2A89694F03894E1A0DF2979609"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_D61370BFC0EC67907D191FFC3467525E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -79,6 +85,12 @@
         "OwnerKey" = "8:_2D1DB99B5C8B30CA96DD41A959192297"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_D61370BFC0EC67907D191FFC3467525E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -97,6 +109,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -113,6 +133,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -142,6 +170,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_261695CB9EA24245B2D1D81DA506BF7B"
+            {
+            "SourcePath" = "8:..\\PDFTool\\bin\\Release\\x86\\pdfium.dll"
+            "TargetName" = "8:pdfium.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_4ECAF354BC924AF0AEFD0709FF596412"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_279AAF6B7809FA42669E7AE52F1258F3"
             {
             "AssemblyRegister" = "3:1"
@@ -202,6 +250,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_364549D407CF442494D99E87FE44A3CF"
+            {
+            "SourcePath" = "8:..\\PDFTool\\bin\\Release\\x64\\pdfium.dll"
+            "TargetName" = "8:pdfium.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_675402EAE66E4199B1FBB75F7E4625EF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5355FA0D2C05E733B156A460959ABD0D"
@@ -282,6 +350,28 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_4ECAF354BC924AF0AEFD0709FF596412"
+                    {
+                    "Name" = "8:x86"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_0AEC83EF22AD467B994F495A3E4C10D8"
+                        "Folders"
+                        {
+                        }
+                    }
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_675402EAE66E4199B1FBB75F7E4625EF"
+                    {
+                    "Name" = "8:x64"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_04C20C3AEFF04BEA865293A0826CAC26"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_C88F05A361714FDCB6E31E1503F74C2B"
