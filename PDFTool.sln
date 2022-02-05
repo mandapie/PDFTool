@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30621.155
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFTool", "PDFTool\PDFTool.csproj", "{1D519599-BF04-45E7-88CF-419BB1330974}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "PDFToolSetup", "PDFToolSetup\PDFToolSetup.vdproj", "{090420CF-A358-481A-81E7-87E02F344855}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{1D519599-BF04-45E7-88CF-419BB1330974}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D519599-BF04-45E7-88CF-419BB1330974}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D519599-BF04-45E7-88CF-419BB1330974}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090420CF-A358-481A-81E7-87E02F344855}.Debug|Any CPU.ActiveCfg = Debug
+		{090420CF-A358-481A-81E7-87E02F344855}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

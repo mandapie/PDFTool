@@ -2,6 +2,7 @@
 using PDFTool.BLLs;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace PDFTool
 {
@@ -16,6 +17,7 @@ namespace PDFTool
             InitializeComponent();
         }
 
+        #region select file
         private void SelectFile(object sender, RoutedEventArgs e)
         {
             try
@@ -36,6 +38,31 @@ namespace PDFTool
                 MessageBox.Show(Utils.Messages.Error + ex.Message, "Error");
             }
         }
+
+        //source: https://stackoverflow.com/questions/4281857/wpf-drag-and-drop-to-a-textbox
+        private void TextBox_DragEnter(object sender, DragEventArgs e)
+        {
+            e.Effects = DragDropEffects.Copy;
+        }
+
+        //source: https://stackoverflow.com/questions/4281857/wpf-drag-and-drop-to-a-textbox
+        //source: https://www.codeproject.com/Articles/42696/Textbox-Drag-Drop-in-WPF
+        private void TextBox_Drop(object sender, DragEventArgs e)
+        {
+            object text = e.Data.GetData(DataFormats.FileDrop);
+            TextBox tb = sender as TextBox;
+            if (tb != null)
+            {
+                tb.Text = string.Format("{0}", ((string[])text)[0]);
+            }
+        }
+
+        //source: https://stackoverflow.com/questions/4281857/wpf-drag-and-drop-to-a-textbox
+        private void TextBox_DragOver(object sender, DragEventArgs e)
+        {
+            e.Handled = true;
+        }
+        #endregion
 
         private void ShrinkPDF(object sender, RoutedEventArgs e)
         {

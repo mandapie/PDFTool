@@ -12,18 +12,22 @@
             <ColumnDefinition Width="479*"/>
         </Grid.ColumnDefinitions>
         <Label Content="File" HorizontalAlignment="Left" Margin="60,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="-11.515,0.406"/>
-        <TextBox HorizontalAlignment="Left" Height="25" Margin="104,50,0,0" TextWrapping="Wrap" Text="select file..." VerticalAlignment="Top" Width="310" Name="filenameTextbox" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Height="25" Margin="104,50,0,0" TextWrapping="Wrap" Text="select file..." VerticalAlignment="Top" Width="310" Name="filenameTextbox" AllowDrop="True" Grid.ColumnSpan="2"
+                 PreviewDragEnter="TextBox_DragEnter" PreviewDrop="TextBox_Drop" PreviewDragOver="TextBox_DragOver"/>
         <Button Content="Browse" HorizontalAlignment="Left" Margin="326,50,0,0" VerticalAlignment="Top" Width="75" Height="25" RenderTransformOrigin="0.472,-0.252" Click="SelectFile" Grid.Column="1"/>
 
         <Button Content="Shrink PDF" HorizontalAlignment="Left" Margin="104,96,0,0" VerticalAlignment="Top" Width="120" Height="35" Click="ShrinkPDF" Grid.ColumnSpan="2"/>
         <Button Content="Image To PDF" HorizontalAlignment="Left" Margin="138,96,0,0" VerticalAlignment="Top" Width="120" Height="35" Click="ImageToPDF" Grid.Column="1"/>
         <Button Content="PDF To Image" HorizontalAlignment="Left" Margin="281,96,0,0" VerticalAlignment="Top" Width="120" Height="35" Click="PDFToImage" Grid.Column="1"/>
+        
         <Label Content="Save as..." Grid.Column="1" HorizontalAlignment="Left" Margin="281,136,0,0" VerticalAlignment="Top"/>
         <RadioButton Content=".png" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="288,164,0,0" GroupName="imgTypeRadioBtns" Name="pngRadioBtn" IsChecked="True" Grid.Column="1"/>
         <RadioButton Content=".jpg" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="288,184,0,0" GroupName="imgTypeRadioBtns" Name="jpgRadioBtn" Grid.Column="1"/>
+
+        <Label Content="DPI:" Grid.Column="1" HorizontalAlignment="Left" Margin="360,136,0,0" VerticalAlignment="Top"/>
         <RadioButton Content="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="368,164,0,0" GroupName="dpiRadioBtns" Name="dpi300RadioBtn" IsChecked="True" Grid.Column="1"/>
         <RadioButton Content="600" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="368,184,0,0" GroupName="dpiRadioBtns" Name="dpi600RadioBtn" Grid.Column="1"/>
-        <Label Content="DPI:" Grid.Column="1" HorizontalAlignment="Left" Margin="360,136,0,0" VerticalAlignment="Top"/>
+        
         <!--<Button Content="COMBINE PDF" HorizontalAlignment="Left" Margin="60,299,0,0" VerticalAlignment="Top" Width="120" Height="35" Click="Button_Click"/>
         <Button Content="REMOVE PDF PAGE" HorizontalAlignment="Left" Margin="231,299,0,0" VerticalAlignment="Top" Width="120" Height="35" Click="Button_Click"/>-->
     </Grid>
