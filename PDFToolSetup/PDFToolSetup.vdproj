@@ -51,7 +51,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A8DFA7F10EB14E57BF572C2428CB13EE"
+        "MsmKey" = "8:_6CC2D63182F341A1A7EA1C317F2A8B9E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -122,6 +122,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
         "Release"
@@ -317,9 +325,9 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A8DFA7F10EB14E57BF572C2428CB13EE"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6CC2D63182F341A1A7EA1C317F2A8B9E"
             {
-            "SourcePath" = "8:..\\..\\..\\favicon.ico"
+            "SourcePath" = "8:..\\PDFTool\\favicon.ico"
             "TargetName" = "8:favicon.ico"
             "Tag" = "8:"
             "Folder" = "8:_9103658B07944A0B8850261A04E0CFDF"
@@ -578,7 +586,7 @@
             "Target" = "8:_F6F35B2A89694F03894E1A0DF2979609"
             "Folder" = "8:_EAC46875FF84485BA19B8647E2B5301D"
             "WorkingFolder" = "8:_9103658B07944A0B8850261A04E0CFDF"
-            "Icon" = "8:_A8DFA7F10EB14E57BF572C2428CB13EE"
+            "Icon" = "8:_6CC2D63182F341A1A7EA1C317F2A8B9E"
             "Feature" = "8:"
             }
         }
