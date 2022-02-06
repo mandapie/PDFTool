@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace PDFTool.BLLs
 {
@@ -19,6 +20,14 @@ namespace PDFTool.BLLs
                 string shrunkfileSavePath = Path.GetDirectoryName(filefullname);
                 string shrunkfilefullname = $"{shrunkfileSavePath}//{shrunkfilename}_compressed.pdf";
 
+                if (Utils.CheckFileExists(shrunkfilefullname))
+                {
+                    if (MessageBox.Show(string.Format(Utils.Messages.FileExists, $"{shrunkfilename}_compressed.pdf") + " " + Utils.Messages.ContinueQuestion, Utils.Status.Warning, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                    {
+                        return false;
+                    }
+                }
+
                 PdfDocument document = PdfReader.Open(filefullname);
                 document.Options.FlateEncodeMode = PdfFlateEncodeMode.BestCompression;
                 document.Options.UseFlateDecoderForJpegImages = PdfUseFlateDecoderForJpegImages.Automatic;
@@ -26,6 +35,7 @@ namespace PDFTool.BLLs
                 document.Options.CompressContentStreams = true; // Defaults to false in debug build, so we set it to true.
 
                 document.Save(shrunkfilefullname);
+
                 return true;
             }
             catch

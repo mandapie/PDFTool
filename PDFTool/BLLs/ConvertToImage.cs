@@ -1,6 +1,7 @@
 ﻿using PdfiumViewer;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Windows;
 
 namespace PDFTool.BLLs
 {
@@ -24,6 +25,15 @@ namespace PDFTool.BLLs
                     {
                         // Save rendered image to disc
                         string savename = $"{imageSavePath}\\{imagename}_{page + 1}{fileType}";
+
+                        if (Utils.CheckFileExists(savename))
+                        {
+                            if (MessageBox.Show(string.Format(Utils.Messages.FileExists, $"{imagename}_{page + 1}{fileType}") + " " + Utils.Messages.ContinueQuestion, Utils.Status.Warning, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                            {
+                                return false;
+                            }
+                        }
+
                         img.Save(savename);
                     }
                 }

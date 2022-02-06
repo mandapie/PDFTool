@@ -35,7 +35,7 @@ namespace PDFTool
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Utils.Messages.Error + ex.Message, "Error");
+                MessageBox.Show(Utils.Messages.Error + ex.Message, Utils.Status.Error);
             }
         }
 
@@ -73,7 +73,7 @@ namespace PDFTool
                 string[] extentionTypes = new string[] { ".pdf" };
                 if (!Utils.ValidateFile(filefullname, extentionTypes))
                 {
-                    MessageBox.Show(Utils.Messages.IncorrectFile + string.Format(Utils.Messages.AcceptedFileList, string.Join(", ", extentionTypes)), "Warning");
+                    MessageBox.Show(Utils.Messages.IncorrectFile + string.Format(Utils.Messages.AcceptedFileList, string.Join(", ", extentionTypes)), Utils.Status.Error);
                     return;
                 }
 
@@ -81,12 +81,12 @@ namespace PDFTool
                 CompressPDF bll = new CompressPDF();
                 if (bll.ShrinkPDF(filefullname))
                 {
-                    MessageBox.Show(Utils.Messages.SuccessConvert, "Success");
+                    MessageBox.Show(Utils.Messages.SuccessConvert, Utils.Status.Success);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Utils.Messages.Error + ex.Message, "Error");
+                MessageBox.Show(Utils.Messages.Error + ex.Message, Utils.Status.Error);
             }
         }
 
@@ -99,7 +99,7 @@ namespace PDFTool
                 string[] extentionTypes = new string[] { ".jpg", ".png" };
                 if (!Utils.ValidateFile(imagefullname, extentionTypes))
                 {
-                    MessageBox.Show(Utils.Messages.IncorrectFile + string.Format(Utils.Messages.AcceptedFileList, string.Join(", ", extentionTypes)), "Warning");
+                    MessageBox.Show(Utils.Messages.IncorrectFile + string.Format(Utils.Messages.AcceptedFileList, string.Join(", ", extentionTypes)), Utils.Status.Error);
                     return;
                 }
 
@@ -107,12 +107,12 @@ namespace PDFTool
                 ConvertToPDF bll = new ConvertToPDF();
                 if (bll.GeneratePDF(imagefullname))
                 {
-                    MessageBox.Show(Utils.Messages.SuccessConvert, "Success");
+                    MessageBox.Show(Utils.Messages.SuccessConvert, Utils.Status.Success);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Utils.Messages.Error + ex.Message, "Error");
+                MessageBox.Show(Utils.Messages.Error + ex.Message, Utils.Status.Error);
             }
         }
 
@@ -125,7 +125,7 @@ namespace PDFTool
                 string[] extentionTypes = new string[] { ".pdf" };
                 if (!Utils.ValidateFile(filefullname, extentionTypes))
                 {
-                    MessageBox.Show(Utils.Messages.IncorrectFile + string.Format(Utils.Messages.AcceptedFileList, string.Join(", ", extentionTypes)), "Warning");
+                    MessageBox.Show(Utils.Messages.IncorrectFile + string.Format(Utils.Messages.AcceptedFileList, string.Join(", ", extentionTypes)), Utils.Status.Error);
                     return;
                 }
 
@@ -154,12 +154,12 @@ namespace PDFTool
                 ConvertToImage bll = new ConvertToImage();
                 if (bll.GenerateImage(filefullname, fileType, dpi))
                 {
-                    MessageBox.Show(Utils.Messages.SuccessConvert, "Success");
+                    MessageBox.Show(Utils.Messages.SuccessConvert, Utils.Status.Success);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(Utils.Messages.Error + ex.Message, "Error");
+                MessageBox.Show(Utils.Messages.Error + ex.Message, Utils.Status.Error);
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using PdfSharp.Drawing;
 using PdfSharp.Pdf;
 using System.IO;
+using System.Windows;
 
 namespace PDFTool.BLLs
 {
@@ -12,6 +13,14 @@ namespace PDFTool.BLLs
             try
             {
                 string filefullname = Path.ChangeExtension(imagefullname, ".pdf");
+
+                if (Utils.CheckFileExists(filefullname))
+                {
+                    if (MessageBox.Show(string.Format(Utils.Messages.FileExists, Path.GetFileName(filefullname)) + " " + Utils.Messages.ContinueQuestion, Utils.Status.Warning, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
+                    {
+                        return false;
+                    }
+                }
 
                 PdfDocument document = new PdfDocument();
                 PdfPage page = document.AddPage(); // Create an empty page or load existing
