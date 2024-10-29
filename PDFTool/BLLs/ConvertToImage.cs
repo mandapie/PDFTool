@@ -7,7 +7,7 @@ namespace PDFTool.BLLs
 {
     public class ConvertToImage
     {
-        public bool GenerateImage(string filefullname, string fileType, int dpi)
+        public void GenerateImage(string filefullname, string fileType, int dpi)
         {
             try
             {
@@ -30,15 +30,13 @@ namespace PDFTool.BLLs
                         {
                             if (MessageBox.Show(string.Format(Utils.Messages.FileExists, $"{imagename}_{page + 1}{fileType}") + " " + Utils.Messages.ContinueQuestion, Utils.Status.Warning, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
                             {
-                                return false;
+                                return;
                             }
                         }
 
                         img.Save(savename);
                     }
                 }
-
-                return true;
             }
             catch
             {

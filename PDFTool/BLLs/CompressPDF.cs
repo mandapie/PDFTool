@@ -12,7 +12,7 @@ namespace PDFTool.BLLs
 {
     public class CompressPDF
     {
-        public bool ShrinkPDF(string filefullname)
+        public void ShrinkPDF(string filefullname)
         {
             try
             {
@@ -24,7 +24,7 @@ namespace PDFTool.BLLs
                 {
                     if (MessageBox.Show(string.Format(Utils.Messages.FileExists, $"{shrunkfilename}_compressed.pdf") + " " + Utils.Messages.ContinueQuestion, Utils.Status.Warning, MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.No)
                     {
-                        return false;
+                        return;
                     }
                 }
 
@@ -35,8 +35,6 @@ namespace PDFTool.BLLs
                 document.Options.CompressContentStreams = true; // Defaults to false in debug build, so we set it to true.
 
                 document.Save(shrunkfilefullname);
-
-                return true;
             }
             catch
             {

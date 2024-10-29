@@ -8,7 +8,6 @@ namespace PDFTool.BLLs
         public static class Messages
         {
             public const string Success = "Done!";
-            public const string SuccessConvert = "File successfully converted.";
 
             public const string IncorrectFile = "Please select the correct file type.\n\n";
             public const string AcceptedFileList = "Acccepted file types: {0}";
@@ -25,11 +24,23 @@ namespace PDFTool.BLLs
             public const string Warning = "Warning";
         }
 
-        public static bool ValidateFile(string filename, string[] extentionTypes)
+        public static bool ValidateFiles(string filenames, string[] extentionTypes)
         {
             try
             {
-                return extentionTypes.Contains(Path.GetExtension(filename).ToLower());
+                bool result = true;
+                string[] filenamesArr = filenames.Split(';');
+
+                foreach (string filename in filenamesArr)
+                {
+                    if (!extentionTypes.Contains(Path.GetExtension(filename).ToLower()))
+                    {
+                        result = false;
+                        break;
+                    }
+                }
+
+                return result;
             }
             catch
             {
@@ -37,11 +48,23 @@ namespace PDFTool.BLLs
             }
         }
 
-        public static bool CheckFileExists(string filename)
+        public static bool CheckFileExists(string filenames)
         {
             try
             {
-                return File.Exists(filename);
+                bool result = true;
+                string[] filenamesArr = filenames.Split(';');
+
+                foreach (string filename in filenamesArr)
+                {
+                    if (!File.Exists(filenames))
+                    {
+                        result = false;
+                        break;
+                    }
+                }
+
+                return result;
             }
             catch
             {

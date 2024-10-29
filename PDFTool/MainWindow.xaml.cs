@@ -24,13 +24,11 @@ namespace PDFTool
             {
                 OpenFileDialog dialog = new OpenFileDialog();
                 dialog.DefaultExt = ".pdf";
-                //dialog.Filter = "Image files (*.png;*.jpg)|Pdf Files (*.pdf)";
+                dialog.Multiselect = true;
 
                 if (dialog.ShowDialog() == true)
                 {
-                    //string filepath = dialog.FileName;
-                    //string filename = filepath.Split('\\').Last();
-                    filenameTextbox.Text = dialog.FileName;
+                    filenameTextbox.Text = string.Join(";", dialog.FileNames);
                 }
             }
             catch (Exception ex)
@@ -69,20 +67,24 @@ namespace PDFTool
             try
             {
                 // validation
-                string filefullname = filenameTextbox.Text;
+                string filenames = filenameTextbox.Text;
                 string[] extentionTypes = new string[] { ".pdf" };
-                if (!Utils.ValidateFile(filefullname, extentionTypes))
+                if (!Utils.ValidateFiles(filenames, extentionTypes))
                 {
                     MessageBox.Show(Utils.Messages.IncorrectFile + string.Format(Utils.Messages.AcceptedFileList, string.Join(", ", extentionTypes)), Utils.Status.Error);
                     return;
                 }
 
                 // shrink
+                string[] filenamesArr = filenames.Split(';');
                 CompressPDF bll = new CompressPDF();
-                if (bll.ShrinkPDF(filefullname))
+
+                foreach (string filename in filenamesArr)
                 {
-                    MessageBox.Show(Utils.Messages.SuccessConvert, Utils.Status.Success);
+                    bll.ShrinkPDF(filename);
                 }
+
+                MessageBox.Show(Utils.Messages.Success, Utils.Status.Success);
             }
             catch (Exception ex)
             {
@@ -95,20 +97,20 @@ namespace PDFTool
             try
             {
                 // validation
-                string imagefullname = filenameTextbox.Text;
+                string filenames = filenameTextbox.Text;
                 string[] extentionTypes = new string[] { ".jpg", ".png" };
-                if (!Utils.ValidateFile(imagefullname, extentionTypes))
+                if (!Utils.ValidateFiles(filenames, extentionTypes))
                 {
                     MessageBox.Show(Utils.Messages.IncorrectFile + string.Format(Utils.Messages.AcceptedFileList, string.Join(", ", extentionTypes)), Utils.Status.Error);
                     return;
                 }
 
                 // convert
+                string[] filenamesArr = filenames.Split(';');
                 ConvertToPDF bll = new ConvertToPDF();
-                if (bll.GeneratePDF(imagefullname))
-                {
-                    MessageBox.Show(Utils.Messages.SuccessConvert, Utils.Status.Success);
-                }
+                bll.GeneratePDF(filenamesArr);
+
+                MessageBox.Show(Utils.Messages.Success, Utils.Status.Success);
             }
             catch (Exception ex)
             {
@@ -121,9 +123,9 @@ namespace PDFTool
             try
             {
                 // validation
-                string filefullname = filenameTextbox.Text;
+                string filenames = filenameTextbox.Text;
                 string[] extentionTypes = new string[] { ".pdf" };
-                if (!Utils.ValidateFile(filefullname, extentionTypes))
+                if (!Utils.ValidateFiles(filenames, extentionTypes))
                 {
                     MessageBox.Show(Utils.Messages.IncorrectFile + string.Format(Utils.Messages.AcceptedFileList, string.Join(", ", extentionTypes)), Utils.Status.Error);
                     return;
@@ -151,11 +153,15 @@ namespace PDFTool
                 }
 
                 // convert
+                string[] filenamesArr = filenames.Split(';');
                 ConvertToImage bll = new ConvertToImage();
-                if (bll.GenerateImage(filefullname, fileType, dpi))
+
+                foreach (string filename in filenamesArr)
                 {
-                    MessageBox.Show(Utils.Messages.SuccessConvert, Utils.Status.Success);
+                    bll.GenerateImage(filenames, fileType, dpi);
                 }
+
+                MessageBox.Show(Utils.Messages.Success, Utils.Status.Success);
             }
             catch (Exception ex)
             {
